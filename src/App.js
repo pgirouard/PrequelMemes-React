@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button } from 'semantic-ui-react';
+import { Button, Dropdown, Select } from 'semantic-ui-react';
+
+const options = [
+  { key: 'page', text: 'Obiwan', value: 'obiwan' },
+  { key: 'org', text: 'Quigon', value: 'quigon' },
+  { key: 'site', text: 'Anakin', value: 'anakin' },
+]
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Button primary>Primary</Button>
+        <Select button basic floating options={options} defaultValue='Select a Character'/>
+        <Button
+          color='yellow'
+          content='Search'
+        />
       </div>
     );
   }
